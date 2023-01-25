@@ -3,16 +3,16 @@
 import cdx_toolkit
 
 cdx = cdx_toolkit.CDXFetcher(source='cc')
-url = 'usatoday.com/*'
+url = 'eb2.3lift.com/*'
 
 warcinfo = {
-    'software': 'pypi_cdx_toolkit iter-and-warc example',
-    'isPartOf': 'USA-TODAY-COMMONCRAWL',
+    'software': 'pypi_cdx_toolkit webads',
+    'isPartOf': 'eb2-COMMONCRAWL',
     'description': 'warc extraction',
     'format': 'WARC file version 1.0',
 }
 
-writer = cdx_toolkit.warc.get_writer('USA-TODAY', 'COMMONCRAWL', warcinfo, warc_version='1.1')
+writer = cdx_toolkit.warc.get_writer('eb2', 'COMMONCRAWL', warcinfo, warc_version='1.1')
 
 for obj in cdx.iter(url, limit=10):
     url = obj['url']
