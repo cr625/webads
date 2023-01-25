@@ -2,17 +2,17 @@
 
 import cdx_toolkit
 
-cdx = cdx_toolkit.CDXFetcher(source='cc')
-url = 'eb2.3lift.com/*'
+cdx = cdx_toolkit.CDXFetcher(source='ia')
+url = 's0.2mdn.net/simgad/*'
 
 warcinfo = {
     'software': 'pypi_cdx_toolkit webads',
-    'isPartOf': 'eb2-COMMONCRAWL',
+    'isPartOf': '2mdn-INTERNETARCHIVE',
     'description': 'warc extraction',
     'format': 'WARC file version 1.0',
 }
 
-writer = cdx_toolkit.warc.get_writer('eb2', 'COMMONCRAWL', warcinfo, warc_version='1.1')
+writer = cdx_toolkit.warc.get_writer('2mdn', 'INTERNETARCHIVE', warcinfo, warc_version='1.1')
 
 for obj in cdx.iter(url, limit=10):
     url = obj['url']
