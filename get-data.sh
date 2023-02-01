@@ -1,6 +1,6 @@
 #!/bin/sh
-
-CRAWL=CC-MAIN-2022-40
+CRAWL=CC-MAIN-2022-49
+#CRAWL=CC-MAIN-2017-13
 
 # base URL used to download the path listings
 BASE_URL=https://data.commoncrawl.org
