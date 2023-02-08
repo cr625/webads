@@ -4,7 +4,7 @@ from warcio import extractor
 import re
 from itertools import islice
 
-path_to_warc = "/home/cr625/webads/crawl-data/CC-MAIN-2017-13/segments/1490218186353.38/warc/CC-MAIN-20170322212946-00000-ip-10-233-31-227.ec2.internal.warc.gz"
+path_to_warc = "/home/chris/webads/crawl-data/CC-MAIN-2015-48/segments/1448398444047.40/warc/CC-MAIN-20151124205404-00000-ip-10-71-132-137.ec2.internal.warc.gz"
 
 def is_html(record):
         """Return true if (detected) MIME type of a record is HTML"""
@@ -21,7 +21,7 @@ def is_html(record):
         return False
 
 html_tag_pattern = re.compile(b'iframe', re.IGNORECASE)
-ad_server = b'googlesyndication'
+ad_server = b'img'
 
 def process_record(record):
     if record.rec_type == "response":
@@ -59,7 +59,7 @@ def run():
                     contents = record.content_stream().read()
                     if contents.find(ad_server) != -1:
                         file_no += 1
-                        file_name = 'test' + str(file_no) + '.warc'   
+                        file_name = 'output/test' + str(file_no) + '.warc'   
                         f = open(file_name, 'wb')         
                         writer = WARCWriter(f, gzip=False)
                         writer.write_record(record, contents)
