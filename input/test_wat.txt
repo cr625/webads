@@ -1,4 +1,1 @@
-file:/home/chris/webads/crawl-data/CC-MAIN-2022-40/segments/1664030331677.90/wat/CC-MAIN-20220924151538-20220924181538-00000.warc.wat.gz
 file:/home/cr625/webads/crawl-data/CC-MAIN-2017-13/segments/1490218186353.38/wat/CC-MAIN-20170322212946-00000-ip-10-233-31-227.ec2.internal.warc.wat.gz
-file:/home/cr625/webads/crawl-data/CC-MAIN-2022-49/segments/1669446706285.92/wat/CC-MAIN-20221126080725-20221126110725-00000.warc.wat.gz
-file:/home/chris/webads/crawl-data/CC-MAIN-2015-48/segments/1448398444047.40/wat/CC-MAIN-20151124205404-00000-ip-10-71-132-137.ec2.internal.warc.wat.gz

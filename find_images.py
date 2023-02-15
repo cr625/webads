@@ -8,7 +8,7 @@ from pathlib import Path
 import sys
 import logging
 
-path_to_warc = "/home/chris/webads/crawl-data/CC-MAIN-2015-48/segments/1448398444047.40/warc/CC-MAIN-20151124205404-00000-ip-10-71-132-137.ec2.internal.warc.gz"
+path_to_warc = "/home/cr625/webads/crawl-data/CC-MAIN-2017-13/segments/1490218186353.38/warc/CC-MAIN-20170322212946-00000-ip-10-233-31-227.ec2.internal.warc.gz"
 
 def is_html(record):
         """Return true if (detected) MIME type of a record is HTML"""
@@ -50,7 +50,7 @@ def extract(rec):
 
 def get_path(url):
     uri = urlparse(url)
-    return Path(uri.netloc + uri.path + uri.query)
+    return Path(uri.netloc + uri.path + uri.query + 'jpeg')
 
 if __name__ == '__main__':
     main()
