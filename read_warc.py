@@ -8,7 +8,7 @@ path_to_warc = "/home/cr625/webads/crawl-data/CC-MAIN-2017-13/segments/149021818
 
 warc_file = open(path_to_warc, 'rb')
 records = ArchiveIterator(warc_file, arc2warc=True)
-records = islice(records,1000)
+
 
 log = open('/home/cr625/webads/output/warc-images.log')
 images = []
@@ -27,7 +27,9 @@ for record in records:
     if record.rec_type == 'response':
         if record.http_headers.get_header('Content-Type') == 'text/html':
             contents = record.content_stream().read()
-            for image in images:                            
+            for image in images:
+                if image == '.jpg' or image =='1.jpg':
+                    break                            
                 re_image = re.compile(image.encode('ASCII'))
                 if re_image.search(contents):
                     print('img record found')
