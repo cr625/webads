@@ -3,8 +3,9 @@
 import cdx_toolkit
 
 cdx = cdx_toolkit.CDXFetcher(source='ia')
-url = 's0.2mdn.net/simgad/*'
-
+#url = 's0.2mdn.net/sadbundle/*'
+#url = 's0.2mdn.net/simgad/*'
+#url = 's0.2mdn.net/ads/*'
 warcinfo = {
     'software': 'pypi_cdx_toolkit webads',
     'isPartOf': '2mdn-INTERNETARCHIVE',
@@ -14,7 +15,7 @@ warcinfo = {
 
 writer = cdx_toolkit.warc.get_writer('2mdn', 'INTERNETARCHIVE', warcinfo, warc_version='1.1')
 
-for obj in cdx.iter(url, limit=10):
+for obj in cdx.iter(url, limit=100):
     url = obj['url']
     status = obj['status']
     timestamp = obj['timestamp']
