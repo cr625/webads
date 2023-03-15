@@ -13,9 +13,17 @@ import shutil
 import internetarchive
 from itertools import islice
 
-search = internetarchive.search_items('webcap')
+'''
+search = internetarchive.search_items('collection:webcap')
 
 slice = islice(search, 0, 10)
 
 for result in slice:
     print(result['identifier'])
+
+'''    
+item = internetarchive.get_item('WIDE-WEBCAP-20120113214719-055-152-crawl332')
+
+
+
+print (item.metadata)
